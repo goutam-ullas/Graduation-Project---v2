@@ -544,6 +544,7 @@ class Application extends React.Component {
             pointerEvents: "none"
           }}
         >
+        {/*Theme 1 Description*/}
           <div style={{ padding: 20, zIndex: 10, width: "50%" }}>
             <text className="themeDesc">{this.theme1Desc}</text>
           </div>
@@ -584,7 +585,7 @@ class Application extends React.Component {
             width={this.state.videoDimX1 * this.state.videoWidth}
             url="https://vimeo.com/448630508/11ec6d4d54"
             controls={true}
-            onPlay={() => this.setState({ videoDimX1: 2, videoZindex1: 10 })}
+            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
         </div>
