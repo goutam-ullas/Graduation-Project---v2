@@ -567,7 +567,7 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: 48,
+            left: 250,
             width: (2 * window.innerWidth) / 3,
             top: this.state.themeStart + this.state.themeGap,
             height: this.state.themeGap,
@@ -580,7 +580,8 @@ class Application extends React.Component {
               padding: 20,
               zIndex: 10,
               width: "50%",
-              zIndex: 2147483647
+              position: "absolute",
+              zIndex: 2
             }}
           >
             <text className="themeDesc">{this.theme2Desc}</text>
@@ -601,22 +602,6 @@ class Application extends React.Component {
             onPlay={() => this.setState({ videoDimX1: 2, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
-          {/*Theme 2 Image*/}
-          <span role="button" aria-label="" onClick={() => this.toggleImage1()}>
-            <img
-              className="video"
-              style={{
-                position: "absolute",
-                bottom: 300,
-                right: 100,
-                zIndex: this.state.imageZindex1
-              }}
-              src="https://i.imgur.com/xRTW0OR.jpg"
-              alt="Logo"
-              height={(this.state.imageDimX1 + 1) * this.state.videoHeight}
-              width="auto"
-            />
-          </span>
         </div>
         {/*Title Bar*/}
         <div className="titlebar" style={{ top: -10, width: 550, zIndex: 10 }}>
