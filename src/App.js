@@ -32,7 +32,7 @@ class Application extends React.Component {
       value: 50,
       index: true,
       squareState: true,
-      circleState: 1.6,
+      circleState: 1.53,
       aboutState: true,
       aboutWidth: 0,
       researchState: true,
@@ -490,11 +490,11 @@ class Application extends React.Component {
       layerName: "",
       popUpPad: 0
     });
-    if (this.state.circleState == 1.6 * this.state.maxThemes) {
+    if (this.state.circleState == 1.53 * this.state.maxThemes) {
       this.setState({ circleState: 0 });
     } else {
       this.setState(prevState => ({
-        circleState: prevState.circleState + 1.6
+        circleState: prevState.circleState + 1.53
       }));
     }
     console.log(this.state.circleState);
