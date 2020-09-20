@@ -42,7 +42,7 @@ class Application extends React.Component {
       legendHeight: 0,
       squareText: "",
       circleText: "",
-      maxThemes: 2,
+      maxThemes: 8,
       themeGap: window.innerHeight,
       videoDimX1: 1,
       videoDimX2: 1,
@@ -546,9 +546,9 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: 48,
+            left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
-            top: 1.2 * this.state.themeGap,
+            top: 1.47 * this.state.themeGap,
             height: 3*this.state.themeGap / 4,
             pointerEvents: "none"
           }}
@@ -620,8 +620,247 @@ class Application extends React.Component {
             height: 3*this.state.themeGap/4,
             pointerEvents: "none"
           }}
-        />
+        >
+          {/*Theme 3 Description*/}
+          <div
+            style={{
+              padding: 20,
+              width: "50%",
+              position: "absolute",
+              bottom: 70,
+              zIndex: 5
+            }}
+          >
+            <text className="themeDesc">{this.theme2Desc}</text>
+          </div>
+          {/*Theme 3 Video*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              position: "sticky",
+              left: 600,
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex1
+            }}
+            height={this.state.videoDimX1 * this.state.videoHeight}
+            width={this.state.videoDimX1 * this.state.videoWidth}
+            url="https://vimeo.com/448630508/11ec6d4d54"
+            controls={true}
+            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
+            onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
+          />
+        </div>        
         {/*Theme 3 Gap*/}
+        <div style={{height:this.state.themeGap/4}}/>
+        {/*Theme 4*/}
+        <div
+          style={{
+            position: "absolute",
+            left: window.innerWidth / 6,
+            width: (2 * window.innerWidth) / 3,
+            top: 5 * this.state.themeGap,
+            height: 3*this.state.themeGap/4,
+            pointerEvents: "none"
+          }}
+        >
+          {/*Theme 4 Description*/}
+          <div
+            style={{
+              padding: 20,
+              width: "50%",
+              position: "absolute",
+              bottom: 70,
+              zIndex: 5
+            }}
+          >
+            <text className="themeDesc">{this.theme2Desc}</text>
+          </div>
+          {/*Theme 4 Video*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              position: "sticky",
+              left: 600,
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex1
+            }}
+            height={this.state.videoDimX1 * this.state.videoHeight}
+            width={this.state.videoDimX1 * this.state.videoWidth}
+            url="https://vimeo.com/448630508/11ec6d4d54"
+            controls={true}
+            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
+            onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
+          />
+        </div>        
+        {/*Theme 4 Gap*/}
+        <div style={{height:this.state.themeGap/4}}/>
+        {/*Theme 5*/}
+        <div
+          style={{
+            position: "absolute",
+            left: window.innerWidth / 6,
+            width: (2 * window.innerWidth) / 3,
+            top: 6 * this.state.themeGap,
+            height: 3*this.state.themeGap/4,
+            pointerEvents: "none"
+          }}
+        >
+          {/*Theme 5 Description*/}
+          <div
+            style={{
+              padding: 20,
+              width: "50%",
+              position: "absolute",
+              bottom: 70,
+              zIndex: 5
+            }}
+          >
+            <text className="themeDesc">{this.theme2Desc}</text>
+          </div>
+          {/*Theme 5 Video*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              position: "sticky",
+              left: 600,
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex1
+            }}
+            height={this.state.videoDimX1 * this.state.videoHeight}
+            width={this.state.videoDimX1 * this.state.videoWidth}
+            url="https://vimeo.com/448630508/11ec6d4d54"
+            controls={true}
+            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
+            onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
+          />
+        </div>        
+        {/*Theme 5 Gap*/}
+        <div style={{height:this.state.themeGap/4}}/>
+        {/*Theme 6*/}
+        <div
+          style={{
+            position: "absolute",
+            left: window.innerWidth / 6,
+            width: (2 * window.innerWidth) / 3,
+            top: 7 * this.state.themeGap,
+            height: 3*this.state.themeGap/4,
+            pointerEvents: "none"
+          }}
+        >
+          {/*Theme 6 Description*/}
+          <div
+            style={{
+              padding: 20,
+              width: "50%",
+              position: "absolute",
+              bottom: 70,
+              zIndex: 5
+            }}
+          >
+            <text className="themeDesc">{this.theme2Desc}</text>
+          </div>
+          {/*Theme 6 Video*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              position: "sticky",
+              left: 600,
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex1
+            }}
+            height={this.state.videoDimX1 * this.state.videoHeight}
+            width={this.state.videoDimX1 * this.state.videoWidth}
+            url="https://vimeo.com/448630508/11ec6d4d54"
+            controls={true}
+            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
+            onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
+          />
+        </div>        
+        {/*Theme 6 Gap*/}
+        <div style={{height:this.state.themeGap/4}}/>
+        {/*Theme 7*/}
+        <div
+          style={{
+            position: "absolute",
+            left: window.innerWidth / 6,
+            width: (2 * window.innerWidth) / 3,
+            top: 8 * this.state.themeGap,
+            height: 3*this.state.themeGap/4,
+            pointerEvents: "none"
+          }}
+        >
+          {/*Theme 7 Description*/}
+          <div
+            style={{
+              padding: 20,
+              width: "50%",
+              position: "absolute",
+              bottom: 70,
+              zIndex: 5
+            }}
+          >
+            <text className="themeDesc">{this.theme2Desc}</text>
+          </div>
+          {/*Theme 7 Video*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              position: "sticky",
+              left: 600,
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex1
+            }}
+            height={this.state.videoDimX1 * this.state.videoHeight}
+            width={this.state.videoDimX1 * this.state.videoWidth}
+            url="https://vimeo.com/448630508/11ec6d4d54"
+            controls={true}
+            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
+            onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
+          />
+        </div>        
+        {/*Theme 7 Gap*/}
+        <div style={{height:this.state.themeGap/4}}/>
+        {/*Theme 8*/}
+        <div
+          style={{
+            position: "absolute",
+            left: window.innerWidth / 6,
+            width: (2 * window.innerWidth) / 3,
+            top: 9 * this.state.themeGap,
+            height: 3*this.state.themeGap/4,
+            pointerEvents: "none"
+          }}
+        >
+          {/*Theme 8 Description*/}
+          <div
+            style={{
+              padding: 20,
+              width: "50%",
+              position: "absolute",
+              bottom: 70,
+              zIndex: 5
+            }}
+          >
+            <text className="themeDesc">{this.theme2Desc}</text>
+          </div>
+          {/*Theme 8 Video*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              position: "sticky",
+              left: 600,
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex1
+            }}
+            height={this.state.videoDimX1 * this.state.videoHeight}
+            width={this.state.videoDimX1 * this.state.videoWidth}
+            url="https://vimeo.com/448630508/11ec6d4d54"
+            controls={true}
+            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
+            onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
+          />
+        </div>        
+        {/*Theme 8 Gap*/}
         <div style={{height:this.state.themeGap/4}}/>
         {/*Title Bar*/}
         <div className="titlebar" style={{ top: -10, width: 550, zIndex: 10 }}>
