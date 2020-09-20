@@ -96,7 +96,7 @@ class Application extends React.Component {
   bnwColor = "#355b75";
   kitchenColor = "#75492f";
   groceryColor = "#c2b89e";
-  toysColor = "#497182";
+  toysColor = "#4971a2";
   plasticColor = "#8f7f56";
   barsColor = "#57858e";
 
