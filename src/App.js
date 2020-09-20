@@ -778,7 +778,7 @@ class Application extends React.Component {
             onClick={this.legendFunction}
             style={{
               fontSize: 22,
-              position: "absolute",
+              position: "fixed",
               marginLeft: 10,
               marginTop: 10,
               color: "white",
