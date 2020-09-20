@@ -49,8 +49,8 @@ class Application extends React.Component {
       videoZindex1: 1,
       videoZindex2: 1,
       videoZindex3: 1,
-      videoHeight: 180,
-      videoWidth: 320,
+      videoHeight: 270,
+      videoWidth: 480,
       imageDimX1: 0,
       imageZindex1: 1,
       popUp: false,
@@ -536,7 +536,7 @@ class Application extends React.Component {
     return (
       /*Main Div*/
       <div>
-      {/*Map Div*/}
+        {/*Map Div*/}
         <div
           ref={el => (this.mapContainer = el)}
           style={{
@@ -574,8 +574,15 @@ class Application extends React.Component {
             pointerEvents: "none"
           }}
         >
-        {/*Theme 2 Description*/}
-          <div style={{ padding: 20, zIndex: 10, width: "50%" }}>
+          {/*Theme 2 Description*/}
+          <div
+            style={{
+              padding: 20,
+              zIndex: 10,
+              width: "50%",
+              zIndex: 2147483647
+            }}
+          >
             <text className="themeDesc">{this.theme2Desc}</text>
           </div>
           {/*Theme 2 Video*/}
@@ -583,13 +590,13 @@ class Application extends React.Component {
             className="video"
             style={{
               position: "absolute",
-              top: 50,
-              right: 0,
+              left: 400,
+              top:0,
               zIndex: this.state.videoZindex1
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
             width={this.state.videoDimX1 * this.state.videoWidth}
-            url="https://vimeo.com/447916895/08bdea37d0"
+            url="https://vimeo.com/448630508/11ec6d4d54"
             controls={true}
             onPlay={() => this.setState({ videoDimX1: 2, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
@@ -753,7 +760,7 @@ class Application extends React.Component {
             zIndex: 100
           }}
         >
-        {/*About Window - Close Button*/}
+          {/*About Window - Close Button*/}
           <span
             role="button"
             aria-label=""
@@ -783,7 +790,7 @@ class Application extends React.Component {
             zIndex: 100
           }}
         >
-        {/*Legend Window - Close Button*/}
+          {/*Legend Window - Close Button*/}
           <span
             role="button"
             aria-label=""
@@ -808,7 +815,7 @@ class Application extends React.Component {
               fontSize: 10
             }}
           >
-          {/*Legend Gods*/}
+            {/*Legend Gods*/}
             <div
               style={{
                 display: "inline-block",
@@ -956,7 +963,7 @@ class Application extends React.Component {
             zIndex: 100
           }}
         >
-        {/*Research Window - Inner Box*/}
+          {/*Research Window - Inner Box*/}
           <div
             style={{
               left: 0,
@@ -994,7 +1001,7 @@ class Application extends React.Component {
               zIndex: 100
             }}
           >
-          {/*Research Window - Image 1*/}
+            {/*Research Window - Image 1*/}
             <img
               style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
               src="https://i.imgur.com/oEgq3R8.jpg"
