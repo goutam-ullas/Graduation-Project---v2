@@ -1034,7 +1034,7 @@ class Application extends React.Component {
               top: this.state.popUpY,
               textAlign: "center",
               color: "white",
-              backgroundColor: "black",
+              backgroundColor: this.state.popUpColor,
               alignSelf: "flex-start",
               padding: this.state.popUpPad,
               zIndex: 200
