@@ -781,8 +781,7 @@ class Application extends React.Component {
           </span>
           <div
             style={{
-              marginTop: 40,
-              marginLeft: 30,
+              marginTop: 50,
               fontFamily: "ballinger-mono",
               fontWeight: "Light",
               fontSize: 10
@@ -792,6 +791,7 @@ class Application extends React.Component {
               style={{
                 display: "inline-block",
                 width: 150,
+                marginLeft: 10,
                 verticalAlign: "top"
               }}
             >
@@ -805,6 +805,7 @@ class Application extends React.Component {
               style={{
                 display: "inline-block",
                 width: 150,
+                marginLeft: 10,
                 verticalAlign: "top"
               }}
             >
@@ -818,6 +819,7 @@ class Application extends React.Component {
               style={{
                 display: "inline-block",
                 width: 150,
+                marginLeft: 10,
                 verticalAlign: "top"
               }}
             >
@@ -831,6 +833,7 @@ class Application extends React.Component {
               style={{
                 display: "inline-block",
                 width: 150,
+                marginLeft: 10,
                 verticalAlign: "top"
               }}
             >
@@ -844,6 +847,7 @@ class Application extends React.Component {
               style={{
                 display: "inline-block",
                 width: 150,
+                marginLeft: 10,
                 verticalAlign: "top"
               }}
             >
@@ -856,6 +860,7 @@ class Application extends React.Component {
               style={{
                 display: "inline-block",
                 width: 150,
+                marginLeft: 10,
                 verticalAlign: "top"
               }}
             >
@@ -869,6 +874,7 @@ class Application extends React.Component {
               style={{
                 display: "inline-block",
                 width: 150,
+                marginLeft: 10,
                 verticalAlign: "top"
               }}
             >
@@ -882,6 +888,7 @@ class Application extends React.Component {
               style={{
                 display: "inline-block",
                 width: 150,
+                marginLeft: 10,
                 verticalAlign: "top"
               }}
             >
@@ -895,6 +902,7 @@ class Application extends React.Component {
               style={{
                 display: "inline-block",
                 width: 150,
+                marginLeft: 10,
                 verticalAlign: "top"
               }}
             >
