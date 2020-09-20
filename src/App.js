@@ -43,7 +43,7 @@ class Application extends React.Component {
       squareText: "",
       circleText: "",
       maxThemes: 2,
-      themeStart: 1.35 * window.innerHeight,
+      themeStart: 1.3 * window.innerHeight,
       themeGap: window.innerHeight,
       videoDimX1: 1,
       videoDimX2: 1,
