@@ -781,129 +781,128 @@ class Application extends React.Component {
           </span>
           <div
             style={{
-              margin: "auto",
+              marginTop: 40,
+              marginLeft: 30,
               fontFamily: "ballinger-mono",
               fontWeight: "Light",
               fontSize: 10
             }}
           >
-            <div style={{ marginTop: 40, marginLeft: 30 }}>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  verticalAlign: "top"
-                }}
-              >
-                <span className="legendDot" style={{ background: "red" }} />
-                  <p style={{ textAlign: "left" }}>
-                    Place of Worship <br /> # Stores: 50 <br /> Commonly Sold:
-                    Religion
-                  </p>
-              </div>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  verticalAlign: "top"
-                }}
-              >
-                <span className="legendDot" style={{ background: "gray" }} />
-                  <p style={{ textAlign: "left" }}>
-                    Religious Good <br /> # Stores: 50 <br /> Commonly Sold:
-                    Idols, Incense, Vermillon
-                  </p>
-              </div>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  verticalAlign: "top"
-                }}
-              >
-                <span className="legendDot" style={{ background: "blue" }} />
-                  <p style={{ textAlign: "left" }}>
-                    Beauty & Wedding <br /> # Stores: 50 <br /> Commonly Sold:
-                    Bangles, Jewelry, Cosmetics, Bridal wear
-                  </p>
-              </div>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  verticalAlign: "top"
-                }}
-              >
-                <span className="legendDot" style={{ background: "green" }} />
-                  <p style={{ textAlign: "left" }}>
-                    Kitchen Utensils <br /> # Stores: 50 <br /> Commonly Sold:
-                    Pots, Pans, Ladles, Crockery
-                  </p>
-              </div>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  verticalAlign: "top"
-                }}
-              >
-                <span className="legendDot" style={{ background: "brown" }} />
-                  <p style={{ textAlign: "left" }}>
-                    Grocery <br /> # Stores: 50 <br /> Commonly Sold: Grains,
-                    Spices
-                  </p>
-              </div>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  verticalAlign: "top"
-                }}
-              >
-                <span className="legendDot" style={{ background: "yellow" }} />
-                  <p style={{ textAlign: "left" }}>
-                    Toys <br /> # Stores: 50 <br /> Commonly Sold: Dolls, Bikes,
-                    Stuffed animals
-                  </p>
-              </div>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  verticalAlign: "top"
-                }}
-              >
-                <span className="legendDot" style={{ background: "pink" }} />
-                  <p style={{ textAlign: "left" }}>
-                    Plastic Goods <br /> # Stores: 50 <br /> Commonly Sold:
-                    Mops, Buckets, Diapers
-                  </p>
-              </div>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  verticalAlign: "top"
-                }}
-              >
-                <span className="legendDot" style={{ background: "red" }} />
-                  <p style={{ textAlign: "left" }}>
-                    Restaurant <br /> # Stores: 50 <br /> Commonly Sold: Meals &
-                    snacks
-                  </p>
-              </div>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  verticalAlign: "top"
-                }}
-              >
-                <span className="legendDot" style={{ background: "orange" }} />
-                  <p style={{ textAlign: "left" }}>
-                    Bar & Liquor <br /> # Stores: 50 <br /> Commonly Sold: Alcholic beverages
-                  </p>
-              </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: 150,
+                verticalAlign: "top"
+              }}
+            >
+              <span className="legendDot" style={{ background: "red" }} />
+              <p style={{ textAlign: "left" }}>
+                Place of Worship <br /> # Stores: 50 <br /> Commonly Sold:
+                Religion
+              </p>
+            </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: 150,
+                verticalAlign: "top"
+              }}
+            >
+              <span className="legendDot" style={{ background: "gray" }} />
+              <p style={{ textAlign: "left" }}>
+                Religious Good <br /> # Stores: 50 <br /> Commonly Sold: Idols,
+                Incense, Vermillon
+              </p>
+            </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: 150,
+                verticalAlign: "top"
+              }}
+            >
+              <span className="legendDot" style={{ background: "blue" }} />
+              <p style={{ textAlign: "left" }}>
+                Beauty & Wedding <br /> # Stores: 50 <br /> Commonly Sold:
+                Bangles, Jewelry, Cosmetics, Bridal wear
+              </p>
+            </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: 150,
+                verticalAlign: "top"
+              }}
+            >
+              <span className="legendDot" style={{ background: "green" }} />
+              <p style={{ textAlign: "left" }}>
+                Kitchen Utensils <br /> # Stores: 50 <br /> Commonly Sold: Pots,
+                Pans, Ladles, Crockery
+              </p>
+            </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: 150,
+                verticalAlign: "top"
+              }}
+            >
+              <span className="legendDot" style={{ background: "brown" }} />
+              <p style={{ textAlign: "left" }}>
+                Grocery <br /> # Stores: 50 <br /> Commonly Sold: Grains, Spices
+              </p>
+            </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: 150,
+                verticalAlign: "top"
+              }}
+            >
+              <span className="legendDot" style={{ background: "yellow" }} />
+              <p style={{ textAlign: "left" }}>
+                Toys <br /> # Stores: 50 <br /> Commonly Sold: Dolls, Bikes,
+                Stuffed animals
+              </p>
+            </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: 150,
+                verticalAlign: "top"
+              }}
+            >
+              <span className="legendDot" style={{ background: "pink" }} />
+              <p style={{ textAlign: "left" }}>
+                Plastic Goods <br /> # Stores: 50 <br /> Commonly Sold: Mops,
+                Buckets, Diapers
+              </p>
+            </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: 150,
+                verticalAlign: "top"
+              }}
+            >
+              <span className="legendDot" style={{ background: "red" }} />
+              <p style={{ textAlign: "left" }}>
+                Restaurant <br /> # Stores: 50 <br /> Commonly Sold: Meals &
+                snacks
+              </p>
+            </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: 150,
+                verticalAlign: "top"
+              }}
+            >
+              <span className="legendDot" style={{ background: "orange" }} />
+              <p style={{ textAlign: "left" }}>
+                Bar & Liquor <br /> # Stores: 50 <br /> Commonly Sold: Alcholic
+                beverages
+              </p>
             </div>
           </div>
         </div>
