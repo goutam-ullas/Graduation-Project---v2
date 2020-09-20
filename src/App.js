@@ -534,7 +534,9 @@ class Application extends React.Component {
 
   render() {
     return (
+      /*Main Div*/
       <div>
+      {/*Map Div*/}
         <div
           ref={el => (this.mapContainer = el)}
           style={{
@@ -546,6 +548,7 @@ class Application extends React.Component {
             width: this.state.mapWidth
           }}
         />
+        {/*Theme 1*/}
         <div
           style={{
             position: "absolute",
@@ -560,6 +563,7 @@ class Application extends React.Component {
             <text className="themeDesc">{this.theme1Desc}</text>
           </div>
         </div>
+        {/*Theme 2*/}
         <div
           style={{
             position: "absolute",
@@ -570,9 +574,11 @@ class Application extends React.Component {
             pointerEvents: "none"
           }}
         >
+        {/*Theme 2 Description*/}
           <div style={{ padding: 20, zIndex: 10, width: "50%" }}>
             <text className="themeDesc">{this.theme2Desc}</text>
           </div>
+          {/*Theme 2 Video*/}
           <ReactPlayer
             className="video"
             style={{
@@ -588,6 +594,7 @@ class Application extends React.Component {
             onPlay={() => this.setState({ videoDimX1: 2, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
+          {/*Theme 2 Image*/}
           <span role="button" aria-label="" onClick={() => this.toggleImage1()}>
             <img
               className="video"
@@ -604,8 +611,10 @@ class Application extends React.Component {
             />
           </span>
         </div>
+        {/*Title Bar*/}
         <div className="titlebar" style={{ top: -10, width: 550, zIndex: 10 }}>
           <Typekit kitId="bor7jxc" />
+          {/*Home Button*/}
           <span
             role="button"
             aria-label=""
@@ -622,6 +631,7 @@ class Application extends React.Component {
           >
             &#9675;
           </span>
+          {/*About Button*/}
           <span
             role="button"
             aria-label=""
@@ -639,6 +649,7 @@ class Application extends React.Component {
           >
             About
           </span>
+          {/*Slider Button*/}
           <SliderInput
             min={0}
             max={100}
@@ -661,6 +672,7 @@ class Application extends React.Component {
               <SliderHandle />
             </SliderTrack>
           </SliderInput>
+          {/*Next Button*/}
           <span
             role="button"
             aria-label="Next"
@@ -677,6 +689,7 @@ class Application extends React.Component {
           >
             &#11027;
           </span>
+          {/*Triangle Button*/}
           <span
             role="button"
             aria-label="Triangle Button"
@@ -694,6 +707,7 @@ class Application extends React.Component {
           >
             &#9653;
           </span>
+          {/*Legend Button*/}
           <span
             role="button"
             aria-label="Legend"
@@ -710,6 +724,7 @@ class Application extends React.Component {
           >
             &#9677;
           </span>
+          {/*Research Button*/}
           <span
             role="button"
             aria-label=""
@@ -727,6 +742,7 @@ class Application extends React.Component {
             Research
           </span>
         </div>
+        {/*About Window*/}
         <div
           className="about"
           ref={this.aboutRef}
@@ -737,6 +753,7 @@ class Application extends React.Component {
             zIndex: 100
           }}
         >
+        {/*About Window - Close Button*/}
           <span
             role="button"
             aria-label=""
@@ -752,8 +769,10 @@ class Application extends React.Component {
           >
             &#10005;
           </span>
+          {/*About Window - Text Content*/}
           <p style={{ margin: 50, fontSize: 18 }}> {this.aboutText} </p>
         </div>
+        {/*Legend Window*/}
         <div
           className="legend"
           ref={this.legendRef}
@@ -764,6 +783,7 @@ class Application extends React.Component {
             zIndex: 100
           }}
         >
+        {/*Legend Window - Close Button*/}
           <span
             role="button"
             aria-label=""
@@ -779,6 +799,7 @@ class Application extends React.Component {
           >
             &#10005;
           </span>
+          {/*Legend Window - Content Div*/}
           <div
             style={{
               marginTop: 50,
@@ -787,6 +808,7 @@ class Application extends React.Component {
               fontSize: 10
             }}
           >
+          {/*Legend Gods*/}
             <div
               style={{
                 display: "inline-block",
@@ -801,6 +823,7 @@ class Application extends React.Component {
                 Religion
               </p>
             </div>
+            {/*Legend Gods Stores*/}
             <div
               style={{
                 display: "inline-block",
@@ -815,6 +838,7 @@ class Application extends React.Component {
                 Incense, Vermillon
               </p>
             </div>
+            {/*Legend Gods Beauty & Wedding*/}
             <div
               style={{
                 display: "inline-block",
@@ -829,6 +853,7 @@ class Application extends React.Component {
                 Bangles, Jewelry, Cosmetics, Bridal wear
               </p>
             </div>
+            {/*Legend Gods Kitchen Utensils*/}
             <div
               style={{
                 display: "inline-block",
@@ -843,6 +868,7 @@ class Application extends React.Component {
                 Pans, Ladles, Crockery
               </p>
             </div>
+            {/*Legend Grocery*/}
             <div
               style={{
                 display: "inline-block",
@@ -856,6 +882,7 @@ class Application extends React.Component {
                 Grocery <br /> # Stores: 50 <br /> Commonly Sold: Grains, Spices
               </p>
             </div>
+            {/*Legend Toys*/}
             <div
               style={{
                 display: "inline-block",
@@ -870,6 +897,7 @@ class Application extends React.Component {
                 Stuffed animals
               </p>
             </div>
+            {/*Legend Plastic Goods*/}
             <div
               style={{
                 display: "inline-block",
@@ -884,6 +912,7 @@ class Application extends React.Component {
                 Buckets, Diapers
               </p>
             </div>
+            {/*Legend Restaurant*/}
             <div
               style={{
                 display: "inline-block",
@@ -898,6 +927,7 @@ class Application extends React.Component {
                 snacks
               </p>
             </div>
+            {/*Legend Bars & Liquor*/}
             <div
               style={{
                 display: "inline-block",
@@ -914,6 +944,7 @@ class Application extends React.Component {
             </div>
           </div>
         </div>
+        {/*Research Window*/}
         <div
           className="research"
           ref={this.researchRef}
@@ -925,6 +956,7 @@ class Application extends React.Component {
             zIndex: 100
           }}
         >
+        {/*Research Window - Inner Box*/}
           <div
             style={{
               left: 0,
@@ -935,6 +967,7 @@ class Application extends React.Component {
               zIndex: 101
             }}
           />
+          {/*Research Window - Close Button*/}
           <span
             role="button"
             aria-label=""
@@ -950,6 +983,7 @@ class Application extends React.Component {
           >
             &#10005;
           </span>
+          {/*Research Window - Image Holder*/}
           <div
             className="research"
             style={{
@@ -960,12 +994,14 @@ class Application extends React.Component {
               zIndex: 100
             }}
           >
+          {/*Research Window - Image 1*/}
             <img
               style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
               src="https://i.imgur.com/oEgq3R8.jpg"
               height={(4 * window.innerHeight) / 5}
               width="auto"
             />
+            {/*Research Window - Image 2*/}
             <img
               style={{ marginLeft: 50, marginTop: window.innerHeight / 10 }}
               src="https://i.imgur.com/Fn7Komh.jpg"
@@ -974,6 +1010,7 @@ class Application extends React.Component {
             />
           </div>
         </div>
+        {/*Map Dots PopUps*/}
         <div>
           <text
             style={{
