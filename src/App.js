@@ -444,6 +444,8 @@ class Application extends React.Component {
     }
     if (this.state.legendState == true) {
       this.setState({ legendHeight: window.innerHeight / 5 });
+      var legendId = document.getElementById("legendWindow");
+      legendId.scrollTop = 0;
     } else {
       this.setState({ legendHeight: 0 });
     }
@@ -758,7 +760,7 @@ class Application extends React.Component {
           <p style={{ margin: 50, fontSize: 18 }}> {this.aboutText} </p>
         </div>
         {/*Legend Window*/}
-        <div
+        <div id="legendWindow"
           className="legend"
           ref={this.legendRef}
           style={{
