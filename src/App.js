@@ -62,7 +62,8 @@ class Application extends React.Component {
       popUpW: 0,
       pointName: "",
       layerName: "",
-      popUpPad: 0
+      popUpPad: 0,
+      popUpColor: ""
     };
     /*Bind Functions*/
     this.researchRef = React.createRef();
@@ -88,18 +89,18 @@ class Application extends React.Component {
     this.theme3Desc =
       "This thesis looks at an urban market, Begum Bazar situated in the old city of Hyderabad and its relation to gender. The work, initially set out to explore kitchen objects and their place in shaping one’s life, eventually becomes an exploration into how, space and gender narratives co-exist and help sustain each other. By using the example of this market situated in a major metropolitan Indian city, and through interviews of people occupying and visiting the space, the work speculates on how social hierarchies and practices gain ground.";
   }
-/* Legend colors */
-    godsColor = "#79859a";
-    godsStoreColor = "#6999a4";
-    restoColor = "#37482b";
-    bnwColor = "#355b75";
-    kitchenColor = "#75492f";
-    groceryColor = "#c2b89e";
-    toysColor = "#497182";
-    plasticColor = "#8f7f56";
-    barsColor = "#57858e";
+  /* Legend colors */
+  godsColor = "#79859a";
+  godsStoreColor = "#6999a4";
+  restoColor = "#37482b";
+  bnwColor = "#355b75";
+  kitchenColor = "#75492f";
+  groceryColor = "#c2b89e";
+  toysColor = "#497182";
+  plasticColor = "#8f7f56";
+  barsColor = "#57858e";
 
-/*On Mount*/
+  /*On Mount*/
   componentDidMount() {
     /*Update Dimenstions based on screen size*/
     this.updateDimensions();
@@ -125,7 +126,7 @@ class Application extends React.Component {
     function easing(t) {
       return t * (2 - t);
     }
-      /*Map- Game Controls*/
+    /*Map- Game Controls*/
     this.map.on("load", () => {
       this.map.getCanvas().focus();
       window.addEventListener(
@@ -174,7 +175,8 @@ class Application extends React.Component {
           popUpY: pageY,
           popUpH: 500,
           popUpW: 500,
-          popUpPad: 3
+          popUpPad: 3,
+          popUpColor: this.godsColor
         });
       } else {
         features = this.map.queryRenderedFeatures(e.point, {
@@ -188,7 +190,8 @@ class Application extends React.Component {
             popUpY: pageY,
             popUpH: 500,
             popUpW: 500,
-            popUpPad: 3
+            popUpPad: 3,
+            popUpColor: this.godsStoreColor
           });
         } else {
           features = this.map.queryRenderedFeatures(e.point, {
@@ -202,7 +205,8 @@ class Application extends React.Component {
               popUpY: pageY,
               popUpH: 500,
               popUpW: 500,
-              popUpPad: 3
+              popUpPad: 3,
+              popUpColor: this.restoColor
             });
           } else {
             features = this.map.queryRenderedFeatures(e.point, {
@@ -216,7 +220,8 @@ class Application extends React.Component {
                 popUpY: pageY,
                 popUpH: 500,
                 popUpW: 500,
-                popUpPad: 3
+                popUpPad: 3,
+                popUpColor: this.bnwColor
               });
             } else {
               features = this.map.queryRenderedFeatures(e.point, {
@@ -230,87 +235,79 @@ class Application extends React.Component {
                   popUpY: pageY,
                   popUpH: 500,
                   popUpW: 500,
-                  popUpPad: 3
+                  popUpPad: 3,
+                  popUpColor: this.kitchenColor
                 });
               } else {
                 features = this.map.queryRenderedFeatures(e.point, {
-                  layers: ["kitchen-utensils"]
+                  layers: ["grocery-stores"]
                 });
                 if (features.length) {
                   this.setState({
                     pointName: features[0].properties.Name,
-                    layerName: "Kitchen Utensils Store",
+                    layerName: "Grocery Store",
                     popUpX: pageX,
                     popUpY: pageY,
                     popUpH: 500,
                     popUpW: 500,
-                    popUpPad: 3
+                    popUpPad: 3,
+                    popUpColor: this.groceryColor
                   });
                 } else {
                   features = this.map.queryRenderedFeatures(e.point, {
-                    layers: ["grocery-stores"]
+                    layers: ["toys-stores"]
                   });
                   if (features.length) {
                     this.setState({
                       pointName: features[0].properties.Name,
-                      layerName: "Grocery Store",
+                      layerName: "Toys Store",
                       popUpX: pageX,
                       popUpY: pageY,
                       popUpH: 500,
                       popUpW: 500,
-                      popUpPad: 3
+                      popUpPad: 3,
+                      popUpColor: this.toysColor
+                      
                     });
                   } else {
                     features = this.map.queryRenderedFeatures(e.point, {
-                      layers: ["toys-stores"]
+                      layers: ["plastic-goods-stores"]
                     });
                     if (features.length) {
                       this.setState({
                         pointName: features[0].properties.Name,
-                        layerName: "Toys Store",
+                        layerName: "Plastic Goods Store",
                         popUpX: pageX,
                         popUpY: pageY,
                         popUpH: 500,
                         popUpW: 500,
-                        popUpPad: 3
+                        popUpPad: 3,
+                        popUpColor: this.plasticColor                        
                       });
                     } else {
                       features = this.map.queryRenderedFeatures(e.point, {
-                        layers: ["plastic-goods-stores"]
+                        layers: ["bars-and-liquor"]
                       });
                       if (features.length) {
                         this.setState({
                           pointName: features[0].properties.Name,
-                          layerName: "Plastic Goods Store",
+                          layerName: "Bar and Liquor Store",
                           popUpX: pageX,
                           popUpY: pageY,
                           popUpH: 500,
                           popUpW: 500,
-                          popUpPad: 3
+                          popUpPad: 3,
+                          popUpColor: this.barsColor
                         });
                       } else {
-                        features = this.map.queryRenderedFeatures(e.point, {
-                          layers: ["bars-and-liquor"]
+                        this.setState({
+                          popUpH: 0,
+                          popUpW: 0,
+                          pointName: "",
+                          layerName: "",
+                          popUpPad: 0,
+                          popUpColor: ""
                         });
-                        if (features.length) {
-                          this.setState({
-                            pointName: features[0].properties.Name,
-                            layerName: "Bar and Liquor Store",
-                            popUpX: pageX,
-                            popUpY: pageY,
-                            popUpH: 500,
-                            popUpW: 500,
-                            popUpPad: 3
-                          });
-                        } else {
-                          this.setState({
-                            popUpH: 0,
-                            popUpW: 0,
-                            pointName: "",
-                            layerName: "",
-                            popUpPad: 0
-                          });
-                        }
                       }
                     }
                   }
@@ -554,7 +551,7 @@ class Application extends React.Component {
             pointerEvents: "none"
           }}
         >
-        {/*Theme 1 Description*/}
+          {/*Theme 1 Description*/}
           <div style={{ padding: 20, zIndex: 10, width: "50%" }}>
             <text className="themeDesc">{this.theme1Desc}</text>
           </div>
@@ -563,7 +560,7 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: window.innerWidth/6,
+            left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
             top: this.state.themeStart + this.state.themeGap,
             height: this.state.themeGap,
@@ -588,7 +585,7 @@ class Application extends React.Component {
             style={{
               position: "absolute",
               left: 400,
-              top:0,
+              top: 0,
               zIndex: this.state.videoZindex1
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
@@ -805,7 +802,10 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: this.godsColor }} />
+              <span
+                className="legendDot"
+                style={{ background: this.godsColor }}
+              />
               <p style={{ textAlign: "left" }}>
                 Place of Worship <br /> # Stores: 50 <br /> Commonly Sold:
                 Religion
@@ -820,7 +820,10 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: this.godsStoreColor }} />
+              <span
+                className="legendDot"
+                style={{ background: this.godsStoreColor }}
+              />
               <p style={{ textAlign: "left" }}>
                 Religious Good <br /> # Stores: 50 <br /> Commonly Sold: Idols,
                 Incense, Vermillon
@@ -835,7 +838,10 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: this.bnwColor }} />
+              <span
+                className="legendDot"
+                style={{ background: this.bnwColor }}
+              />
               <p style={{ textAlign: "left" }}>
                 Beauty & Wedding <br /> # Stores: 50 <br /> Commonly Sold:
                 Bangles, Jewelry, Cosmetics, Bridal wear
@@ -850,7 +856,10 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: this.kitchenColor }} />
+              <span
+                className="legendDot"
+                style={{ background: this.kitchenColor }}
+              />
               <p style={{ textAlign: "left" }}>
                 Kitchen Utensils <br /> # Stores: 50 <br /> Commonly Sold: Pots,
                 Pans, Ladles, Crockery
@@ -865,7 +874,10 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: this.groceryColor }} />
+              <span
+                className="legendDot"
+                style={{ background: this.groceryColor }}
+              />
               <p style={{ textAlign: "left" }}>
                 Grocery <br /> # Stores: 50 <br /> Commonly Sold: Grains, Spices
               </p>
@@ -879,7 +891,10 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: this.toysColor }} />
+              <span
+                className="legendDot"
+                style={{ background: this.toysColor }}
+              />
               <p style={{ textAlign: "left" }}>
                 Toys <br /> # Stores: 50 <br /> Commonly Sold: Dolls, Bikes,
                 Stuffed animals
@@ -894,7 +909,10 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: this.plasticColor }} />
+              <span
+                className="legendDot"
+                style={{ background: this.plasticColor }}
+              />
               <p style={{ textAlign: "left" }}>
                 Plastic Goods <br /> # Stores: 50 <br /> Commonly Sold: Mops,
                 Buckets, Diapers
@@ -909,7 +927,10 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: this.restoColor }} />
+              <span
+                className="legendDot"
+                style={{ background: this.restoColor }}
+              />
               <p style={{ textAlign: "left" }}>
                 Restaurant <br /> # Stores: 50 <br /> Commonly Sold: Meals &
                 snacks
@@ -924,7 +945,10 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: this.barsColor }} />
+              <span
+                className="legendDot"
+                style={{ background: this.barsColor }}
+              />
               <p style={{ textAlign: "left" }}>
                 Bar & Liquor <br /> # Stores: 50 <br /> Commonly Sold: Alcholic
                 beverages
