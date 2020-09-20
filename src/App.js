@@ -567,7 +567,7 @@ class Application extends React.Component {
           </div>
         </div>
         {/*Theme 1 Gap*/}
-        <div style={{ height: this.state.themeGap / 4 }} />
+        <div style={{ top: (1.47+0.75)*this.state.themeGap, height: this.state.themeGap / 4 }} />
         {/*Theme 2*/}
         <div
           style={{
@@ -609,7 +609,7 @@ class Application extends React.Component {
           />
         </div>
         {/*Theme 2 Gap*/}
-        <div style={{ height: this.state.themeGap / 4 }} />
+        <div style={{ top:3.75*this.state.themeGap, height: this.state.themeGap/4}} />
         {/*Theme 3*/}
         <div
           style={{
@@ -651,7 +651,7 @@ class Application extends React.Component {
           />
         </div>        
         {/*Theme 3 Gap*/}
-        <div style={{height:this.state.themeGap/4}}/>
+        <div style={{height:2*this.state.themeGap}}/>
         {/*Theme 4*/}
         <div
           style={{
