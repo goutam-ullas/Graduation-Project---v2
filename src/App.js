@@ -554,7 +554,7 @@ class Application extends React.Component {
           }}
         >
           {/*Theme 1 Description*/}
-          <div style={{ padding: 20, zIndex: 10, width: "50%" }}>
+          <div style={{ padding: 20, zIndex: 5, width: "50%" }}>
             <text className="themeDesc">{this.theme1Desc}</text>
           </div>
         </div>
@@ -576,7 +576,7 @@ class Application extends React.Component {
               zIndex: 10,
               width: "50%",
               position: "absolute",
-              zIndex: 2
+              zIndex: 5
             }}
           >
             <text className="themeDesc">{this.theme2Desc}</text>
@@ -1039,7 +1039,7 @@ class Application extends React.Component {
               backgroundColor: this.state.popUpColor,
               alignSelf: "flex-start",
               padding: this.state.popUpPad,
-              zIndex: 200
+              zIndex: 2
             }}
           >
             {this.state.pointName} <br /> {this.state.layerName}
