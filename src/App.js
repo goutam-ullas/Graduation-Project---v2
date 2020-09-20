@@ -553,7 +553,7 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: 250,
+            left: window.innerWidth/6,
             width: (2 * window.innerWidth) / 3,
             top: this.state.themeStart + this.state.themeGap,
             height: this.state.themeGap,
