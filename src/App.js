@@ -808,7 +808,7 @@ class Application extends React.Component {
                   verticalAlign: "top"
                 }}
               >
-                <span className="legendDot" style={{ background: "red" }} />
+                <span className="legendDot" style={{ background: "gray" }} />
                   <p style={{ textAlign: "left" }}>
                     Religious Good <br /> # Stores: 50 <br /> Commonly Sold:
                     Idols, Incense, Vermillon
@@ -821,7 +821,7 @@ class Application extends React.Component {
                   verticalAlign: "top"
                 }}
               >
-                <span className="legendDot" style={{ background: "red" }} />
+                <span className="legendDot" style={{ background: "blue" }} />
                   <p style={{ textAlign: "left" }}>
                     Beauty & Wedding <br /> # Stores: 50 <br /> Commonly Sold:
                     Bangles, Jewelry, Cosmetics, Bridal wear
@@ -834,7 +834,7 @@ class Application extends React.Component {
                   verticalAlign: "top"
                 }}
               >
-                <span className="legendDot" style={{ background: "red" }} />
+                <span className="legendDot" style={{ background: "green" }} />
                   <p style={{ textAlign: "left" }}>
                     Kitchen Utensils <br /> # Stores: 50 <br /> Commonly Sold:
                     Pots, Pans, Ladles, Crockery
@@ -847,7 +847,7 @@ class Application extends React.Component {
                   verticalAlign: "top"
                 }}
               >
-                <span className="legendDot" style={{ background: "red" }} />
+                <span className="legendDot" style={{ background: "brown" }} />
                   <p style={{ textAlign: "left" }}>
                     Grocery <br /> # Stores: 50 <br /> Commonly Sold: Grains,
                     Spices
@@ -860,7 +860,7 @@ class Application extends React.Component {
                   verticalAlign: "top"
                 }}
               >
-                <span className="legendDot" style={{ background: "red" }} />
+                <span className="legendDot" style={{ background: "yellow" }} />
                   <p style={{ textAlign: "left" }}>
                     Toys <br /> # Stores: 50 <br /> Commonly Sold: Dolls, Bikes,
                     Stuffed animals
@@ -873,7 +873,7 @@ class Application extends React.Component {
                   verticalAlign: "top"
                 }}
               >
-                <span className="legendDot" style={{ background: "red" }} />
+                <span className="legendDot" style={{ background: "pink" }} />
                   <p style={{ textAlign: "left" }}>
                     Plastic Goods <br /> # Stores: 50 <br /> Commonly Sold:
                     Mops, Buckets, Diapers
@@ -899,7 +899,7 @@ class Application extends React.Component {
                   verticalAlign: "top"
                 }}
               >
-                <span className="legendDot" style={{ background: "red" }} />
+                <span className="legendDot" style={{ background: "orange" }} />
                   <p style={{ textAlign: "left" }}>
                     Bar & Liquor <br /> # Stores: 50 <br /> Commonly Sold: Alcholic beverages
                   </p>
