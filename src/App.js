@@ -565,7 +565,48 @@ class Application extends React.Component {
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
             top: this.state.themeStart + this.state.themeGap,
-            height: this.state.themeGap,
+            height: this.state.themeGap/2,
+            pointerEvents: "none"
+          }}
+        >
+          {/*Theme 2 Description*/}
+          <div
+            style={{
+              padding: 20,
+              zIndex: 10,
+              width: "50%",
+              position: "absolute",
+              bottom:0,
+              zIndex: 5
+            }}
+          >
+            <text className="themeDesc">{this.theme2Desc}</text>
+          </div>
+          {/*Theme 2 Video*/}
+          <ReactPlayer
+            className="video"
+            style={{
+              position: "sticky",
+              left:600,
+              bottom: 0,
+              zIndex: this.state.videoZindex1
+            }}
+            height={this.state.videoDimX1 * this.state.videoHeight}
+            width={this.state.videoDimX1 * this.state.videoWidth}
+            url="https://vimeo.com/448630508/11ec6d4d54"
+            controls={true}
+            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
+            onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
+          />
+        </div>
+        {/*Theme 3*/}
+        <div
+          style={{
+            position: "absolute",
+            left: window.innerWidth / 6,
+            width: (2 * window.innerWidth) / 3,
+            top: this.state.themeStart + (2*this.state.themeGap),
+            height: this.state.themeGap/2,
             pointerEvents: "none"
           }}
         >
@@ -597,7 +638,7 @@ class Application extends React.Component {
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
-        </div>
+        </div>        
         {/*Title Bar*/}
         <div className="titlebar" style={{ top: -10, width: 550, zIndex: 10 }}>
           <Typekit kitId="bor7jxc" />
