@@ -32,7 +32,7 @@ class Application extends React.Component {
       value: 50,
       index: true,
       squareState: true,
-      circleState: 1,
+      circleState: 1.6,
       aboutState: true,
       aboutWidth: 0,
       researchState: true,
@@ -43,7 +43,6 @@ class Application extends React.Component {
       squareText: "",
       circleText: "",
       maxThemes: 2,
-      themeStart: 1.3 * window.innerHeight,
       themeGap: window.innerHeight,
       videoDimX1: 1,
       videoDimX2: 1,
@@ -267,7 +266,6 @@ class Application extends React.Component {
                       popUpW: 500,
                       popUpPad: 3,
                       popUpColor: this.toysColor
-                      
                     });
                   } else {
                     features = this.map.queryRenderedFeatures(e.point, {
@@ -282,7 +280,7 @@ class Application extends React.Component {
                         popUpH: 500,
                         popUpW: 500,
                         popUpPad: 3,
-                        popUpColor: this.plasticColor                        
+                        popUpColor: this.plasticColor
                       });
                     } else {
                       features = this.map.queryRenderedFeatures(e.point, {
@@ -492,10 +490,12 @@ class Application extends React.Component {
       layerName: "",
       popUpPad: 0
     });
-    if (this.state.circleState == this.state.maxThemes) {
+    if (this.state.circleState == 1.6 * this.state.maxThemes) {
       this.setState({ circleState: 0 });
     } else {
-      this.setState(prevState => ({ circleState: prevState.circleState + 1 }));
+      this.setState(prevState => ({
+        circleState: prevState.circleState + 1.6
+      }));
     }
     console.log(this.state.circleState);
     var scrollTop = this.state.themeGap * this.state.circleState;
@@ -548,24 +548,34 @@ class Application extends React.Component {
             position: "absolute",
             left: 48,
             width: (2 * window.innerWidth) / 3,
-            top: this.state.themeStart,
-            height: this.state.themeGap,
+            top: 1.2 * this.state.themeGap,
+            height: 3*this.state.themeGap / 4,
             pointerEvents: "none"
           }}
         >
           {/*Theme 1 Description*/}
-          <div style={{ padding: 20, zIndex: 5, width: "50%" }}>
+          <div
+            style={{
+              padding: 20,
+              width: "50%",
+              position: "absolute",
+              bottom: 70,
+              zIndex: 5
+            }}
+          >
             <text className="themeDesc">{this.theme1Desc}</text>
           </div>
         </div>
+        {/*Theme 1 Gap*/}
+        <div style={{ height: this.state.themeGap / 4 }} />
         {/*Theme 2*/}
         <div
           style={{
             position: "absolute",
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
-            top: this.state.themeStart + this.state.themeGap,
-            height: this.state.themeGap/2,
+            top: 3 * this.state.themeGap,
+            height: 3*this.state.themeGap/4,
             pointerEvents: "none"
           }}
         >
@@ -573,10 +583,9 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              zIndex: 10,
               width: "50%",
               position: "absolute",
-              bottom:0,
+              bottom: 70,
               zIndex: 5
             }}
           >
@@ -587,8 +596,8 @@ class Application extends React.Component {
             className="video"
             style={{
               position: "sticky",
-              left:600,
-              bottom: 0,
+              left: 600,
+              top: this.state.themeGap / 3,
               zIndex: this.state.videoZindex1
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
@@ -599,46 +608,21 @@ class Application extends React.Component {
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
         </div>
+        {/*Theme 2 Gap*/}
+        <div style={{ height: this.state.themeGap / 4 }} />
         {/*Theme 3*/}
         <div
           style={{
             position: "absolute",
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
-            top: this.state.themeStart + (2*this.state.themeGap),
-            height: this.state.themeGap/2,
+            top: 4 * this.state.themeGap,
+            height: 3*this.state.themeGap/4,
             pointerEvents: "none"
           }}
-        >
-          {/*Theme 2 Description*/}
-          <div
-            style={{
-              padding: 20,
-              zIndex: 10,
-              width: "50%",
-              position: "absolute",
-              zIndex: 5
-            }}
-          >
-            <text className="themeDesc">{this.theme2Desc}</text>
-          </div>
-          {/*Theme 2 Video*/}
-          <ReactPlayer
-            className="video"
-            style={{
-              position: "absolute",
-              left: 400,
-              top: 0,
-              zIndex: this.state.videoZindex1
-            }}
-            height={this.state.videoDimX1 * this.state.videoHeight}
-            width={this.state.videoDimX1 * this.state.videoWidth}
-            url="https://vimeo.com/448630508/11ec6d4d54"
-            controls={true}
-            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
-            onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
-          />
-        </div>        
+        />
+        {/*Theme 3 Gap*/}
+        <div style={{height:this.state.themeGap/4}}/>
         {/*Title Bar*/}
         <div className="titlebar" style={{ top: -10, width: 550, zIndex: 10 }}>
           <Typekit kitId="bor7jxc" />
@@ -801,7 +785,8 @@ class Application extends React.Component {
           <p style={{ margin: 50, fontSize: 18 }}> {this.aboutText} </p>
         </div>
         {/*Legend Window*/}
-        <div id="legendWindow"
+        <div
+          id="legendWindow"
           className="legend"
           ref={this.legendRef}
           style={{
