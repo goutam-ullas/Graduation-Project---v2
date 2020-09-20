@@ -16,11 +16,10 @@ import { Document } from "react-pdf/dist/esm/entry.parcel";
 import "./style.css";
 import mapboxgl from "mapbox-gl";
 //import "mapbox-gl/dist/mapbox-gl.css";
-
 mapboxgl.accessToken =
   "pk.eyJ1Ijoibm5pa2l0YSIsImEiOiJjazdtYzV2MDYwMzliM2dubnVubnJuMTRrIn0.6KqRhtWgMc_nGwMPAqmstQ";
 
-/*Class*/
+/*Main Class*/
 class Application extends React.Component {
   /*Constructor*/
   constructor(props) {
@@ -65,17 +64,18 @@ class Application extends React.Component {
       layerName: "",
       popUpPad: 0
     };
+    /*Bind Functions*/
     this.researchRef = React.createRef();
     this.aboutRef = React.createRef();
     this.legendRef = React.createRef();
     this.handleAboutResearchClick = this.handleAboutResearchClick.bind(this);
     this.circleFunction = this.circleFunction.bind(this);
-    this.squareFunction = this.squareFunction.bind(this);
     this.aboutFunction = this.aboutFunction.bind(this);
     this.legendFunction = this.legendFunction.bind(this);
     this.researchFunction = this.researchFunction.bind(this);
     this.sliderChange = this.sliderChange.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
+    /*Text Variables*/
     this.aboutText =
       "Goods, Gods and Goddesses alternates performances with moments of their making. In portraying the market, Begum Bazar, and the many goods, gods and goddesses that move this space, I am looking, seeking but also escaping what I’ve been rummaging. These are individual episodes, fragments of a whole, a whole I may never conceive. Because the thing is, in the telling of the various parts that will build this whole, I’m left with impressions of acts about acts, of scripted acts and scripting acts, of directing in the Bazar and being directed by the Bazar, of watching people perform with intermittent awareness of my own performance. Here, bodies become, a bride, a mother, a devotee, a woman. Stores advertise wholesale deals. Wholesale deals, more for less money, more for less effort, for becoming everything at once. It is a patch of land, yes, but a theatre, with rehearsals, scripts and episodic memories keeping gender intact, exacted and ordered, with outlines defined, insides determined, and borders enforced.";
     this.theme1Title = "This is Theme 1";
@@ -89,10 +89,13 @@ class Application extends React.Component {
       "This thesis looks at an urban market, Begum Bazar situated in the old city of Hyderabad and its relation to gender. The work, initially set out to explore kitchen objects and their place in shaping one’s life, eventually becomes an exploration into how, space and gender narratives co-exist and help sustain each other. By using the example of this market situated in a major metropolitan Indian city, and through interviews of people occupying and visiting the space, the work speculates on how social hierarchies and practices gain ground.";
   }
 
+/*On Mount*/
   componentDidMount() {
+    /*Update Dimenstions based on screen size*/
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions);
 
+    /*Initiate Map*/
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
       style: "mapbox://styles/nnikita/ckd7n4m5b04e31ip8ai5a1xfj",
@@ -102,21 +105,19 @@ class Application extends React.Component {
       attributionControl: false,
       interactive: false
     });
-
+    /*Map Functions*/
     this.map.scrollZoom.disable();
     this.map.doubleClickZoom.disable();
     this.map.dragPan.enable();
     smoothscroll.polyfill();
     var deltaDistance = 100;
     var deltaDegrees = 10;
-
     function easing(t) {
       return t * (2 - t);
     }
-
+      /*Map- Game Controls*/
     this.map.on("load", () => {
       this.map.getCanvas().focus();
-
       window.addEventListener(
         "keydown",
         e => {
@@ -148,7 +149,7 @@ class Application extends React.Component {
         true
       );
     });
-
+    /*Map - Dots PopUp*/
     this.map.on("click", e => {
       var pageX = window.event.pageX - window.scrollX;
       var pageY = window.event.pageY - window.scrollY;
@@ -310,7 +311,7 @@ class Application extends React.Component {
         }
       }
     });
-
+    /*Map - Reset PopUps on Drag*/
     this.map.on("drag", () => {
       this.setState({
         popUpH: 0,
@@ -320,7 +321,9 @@ class Application extends React.Component {
         popUpPad: 0
       });
     });
+    /*Map - Cursor Style*/
     this.map.getCanvas().style.cursor = "all-scroll";
+    /*Map - Reset location on move*/
     this.map.on("move", () => {
       this.setState({
         lng: this.map.getCenter().lng.toFixed(4),
@@ -333,7 +336,7 @@ class Application extends React.Component {
         popUpPad: 0
       });
     });
-
+    /*Map - Change Cursor Style when hover over dots*/
     this.map.on("mousemove", e => {
       // Set variables equal to the current feature's magnitude, location, and time
       var hoverFeatures = this.map.queryRenderedFeatures(e.point, {
@@ -356,23 +359,23 @@ class Application extends React.Component {
         this.map.getCanvas().style.cursor = "all-scroll";
       }
     });
-
+    /*Remove PopUp when clicked on About, Research, or Legend windows*/
     window.addEventListener("mousedown", this.handleAboutResearchClick);
   }
-
+  /*When clicked on Home Button*/
   indexFunction() {
     console.log("index");
     window.location.reload(false);
     window.scrollTo(0, 0);
   }
-
+  /*Function to Update dimensions*/
   updateDimensions() {
     this.setState({
       mapHeight: window.innerHeight,
       mapWidth: window.innerWidth
     });
   }
-
+  /*Function to remove popups when clicked inside About, Research, or Legend windows*/
   handleAboutResearchClick(event) {
     if (
       this.aboutRef.current.contains(event.target) ||
@@ -388,7 +391,7 @@ class Application extends React.Component {
       });
     }
   }
-
+  /*When clicked on About button*/
   aboutFunction() {
     console.log("about");
     this.setState(prevState => ({
@@ -413,7 +416,7 @@ class Application extends React.Component {
       this.setState({ aboutWidth: 0 });
     }
   }
-
+  /*When clicked on Legend button*/
   legendFunction() {
     console.log("legend");
     this.setState(prevState => ({
@@ -438,7 +441,7 @@ class Application extends React.Component {
       this.setState({ legendHeight: 0 });
     }
   }
-
+  /*When clicked on Research button*/
   researchFunction() {
     console.log("research");
     this.setState(prevState => ({
@@ -466,7 +469,7 @@ class Application extends React.Component {
       this.setState({ researchWidth: 0, researchBorder: 0 });
     }
   }
-
+  /*When clicked on Next button*/
   circleFunction() {
     console.log("circle");
     this.setState({
@@ -498,34 +501,13 @@ class Application extends React.Component {
     }
   }
 
-  squareFunction() {
-    console.log("square");
-    this.setState(prevState => ({
-      squareState: !prevState.squareState
-    }));
-    this.setState({
-      aboutWidth: 0,
-      aboutState: true,
-      legendWidth: 0,
-      legendState: false,
-      popUpH: 0,
-      popUpW: 0,
-      pointName: "",
-      layerName: "",
-      popUpPad: 0
-    });
-    if (this.state.squareState == true) {
-      this.setState({ squareText: "Square" });
-    } else {
-      this.setState({ squareText: "" });
-    }
-  }
-
+  /*When Slider position is changed*/
   sliderChange(v) {
     this.setState({ value: v });
     this.map.zoomTo((1 / 33) * (v - 1) + 18);
   }
 
+  /*Function to toggle image size*/
   toggleImage1() {
     this.setState(prevState => ({
       imageDimX1: 1 - prevState.imageDimX1
