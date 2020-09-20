@@ -787,7 +787,7 @@ class Application extends React.Component {
               fontSize: 10
             }}
           >
-            <div style={{ marginTop: 40, marginLeft: 40 }}>
+            <div style={{ marginTop: 40, marginLeft: 30 }}>
               <div
                 style={{
                   display: "inline-block",
