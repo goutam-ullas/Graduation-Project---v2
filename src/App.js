@@ -32,7 +32,6 @@ class Application extends React.Component {
       value: 50,
       index: true,
       squareState: true,
-      circleState: 1.53,
       aboutState: true,
       aboutWidth: 0,
       researchState: true,
@@ -42,7 +41,6 @@ class Application extends React.Component {
       legendHeight: 0,
       squareText: "",
       circleText: "",
-      maxThemes: 8,
       themeGap: window.innerHeight,
       videoDimX1: 1,
       videoDimX2: 1,
@@ -98,7 +96,9 @@ class Application extends React.Component {
   toysColor = "#4971a2";
   plasticColor = "#8f7f56";
   barsColor = "#57858e";
-
+  /* Theme Position Variables*/
+  circleState = 1.53;
+  maxThemes = 8;
   /*On Mount*/
   componentDidMount() {
     /*Update Dimenstions based on screen size*/
@@ -490,16 +490,14 @@ class Application extends React.Component {
       layerName: "",
       popUpPad: 0
     });
-    if (this.state.circleState == 1.53 * this.state.maxThemes) {
-      this.setState({ circleState: 0 });
+    if (this.circleState == 1.53 * this.maxThemes) {
+      this.circleState = 0;
     } else {
-      this.setState(prevState => ({
-        circleState: prevState.circleState + 1.53
-      }));
+      this.circleState += 1.53;
     }
     console.log(this.state.circleState);
-    var scrollTop = this.state.themeGap * this.state.circleState;
-    if (scrollTop == 0) {
+    var scrollTop = this.state.themeGap * this.circleState;
+    if (this.circleState == 0) {
       window.scrollTo(0, scrollTop);
     } else {
       window.scroll({
@@ -549,7 +547,7 @@ class Application extends React.Component {
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
             top: 1.47 * this.state.themeGap,
-            height: 3*this.state.themeGap / 4,
+            height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
           }}
         >
@@ -566,8 +564,6 @@ class Application extends React.Component {
             <text className="themeDesc">{this.theme1Desc}</text>
           </div>
         </div>
-        {/*Theme 1 Gap*/}
-        <div style={{ top: (1.47+0.75)*this.state.themeGap, height: this.state.themeGap / 4 }} />
         {/*Theme 2*/}
         <div
           style={{
@@ -575,7 +571,7 @@ class Application extends React.Component {
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
             top: 3 * this.state.themeGap,
-            height: 3*this.state.themeGap/4,
+            height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
           }}
         >
@@ -608,16 +604,14 @@ class Application extends React.Component {
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
         </div>
-        {/*Theme 2 Gap*/}
-        <div style={{ top:3.75*this.state.themeGap, height: this.state.themeGap/4}} />
         {/*Theme 3*/}
         <div
           style={{
             position: "absolute",
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
-            top: 4 * this.state.themeGap,
-            height: 3*this.state.themeGap/4,
+            top: 4.5 * this.state.themeGap,
+            height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
           }}
         >
@@ -649,17 +643,15 @@ class Application extends React.Component {
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
-        </div>        
-        {/*Theme 3 Gap*/}
-        <div style={{height:2*this.state.themeGap}}/>
+        </div>
         {/*Theme 4*/}
         <div
           style={{
             position: "absolute",
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
-            top: 5 * this.state.themeGap,
-            height: 3*this.state.themeGap/4,
+            top: 6 * this.state.themeGap,
+            height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
           }}
         >
@@ -691,17 +683,15 @@ class Application extends React.Component {
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
-        </div>        
-        {/*Theme 4 Gap*/}
-        <div style={{height:this.state.themeGap/4}}/>
+        </div>
         {/*Theme 5*/}
         <div
           style={{
             position: "absolute",
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
-            top: 6 * this.state.themeGap,
-            height: 3*this.state.themeGap/4,
+            top: 7.5 * this.state.themeGap,
+            height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
           }}
         >
@@ -733,17 +723,15 @@ class Application extends React.Component {
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
-        </div>        
-        {/*Theme 5 Gap*/}
-        <div style={{height:this.state.themeGap/4}}/>
+        </div>
         {/*Theme 6*/}
         <div
           style={{
             position: "absolute",
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
-            top: 7 * this.state.themeGap,
-            height: 3*this.state.themeGap/4,
+            top: 9 * this.state.themeGap,
+            height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
           }}
         >
@@ -775,17 +763,15 @@ class Application extends React.Component {
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
-        </div>        
-        {/*Theme 6 Gap*/}
-        <div style={{height:this.state.themeGap/4}}/>
+        </div>
         {/*Theme 7*/}
         <div
           style={{
             position: "absolute",
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
-            top: 8 * this.state.themeGap,
-            height: 3*this.state.themeGap/4,
+            top: 10.5 * this.state.themeGap,
+            height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
           }}
         >
@@ -817,17 +803,15 @@ class Application extends React.Component {
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
-        </div>        
-        {/*Theme 7 Gap*/}
-        <div style={{height:this.state.themeGap/4}}/>
+        </div>
         {/*Theme 8*/}
         <div
           style={{
             position: "absolute",
             left: window.innerWidth / 6,
             width: (2 * window.innerWidth) / 3,
-            top: 9 * this.state.themeGap,
-            height: 3*this.state.themeGap/4,
+            top: 12 * this.state.themeGap,
+            height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
           }}
         >
@@ -859,9 +843,18 @@ class Application extends React.Component {
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
-        </div>        
-        {/*Theme 8 Gap*/}
-        <div style={{height:this.state.themeGap/4}}/>
+        </div>
+        {/*Theme 8*/}
+        <div
+          style={{
+            position: "absolute",
+            left: window.innerWidth / 6,
+            width: (2 * window.innerWidth) / 3,
+            top: 13.5 * this.state.themeGap,
+            height: (3 * this.state.themeGap) / 4,
+            pointerEvents: "none"
+          }}
+        />
         {/*Title Bar*/}
         <div className="titlebar" style={{ top: -10, width: 550, zIndex: 10 }}>
           <Typekit kitId="bor7jxc" />
