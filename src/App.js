@@ -1,3 +1,4 @@
+/*imports*/
 import React, { useRef, useEffect, useState } from "react";
 import {
   SliderInput,
@@ -19,7 +20,9 @@ import mapboxgl from "mapbox-gl";
 mapboxgl.accessToken =
   "pk.eyJ1Ijoibm5pa2l0YSIsImEiOiJjazdtYzV2MDYwMzliM2dubnVubnJuMTRrIn0.6KqRhtWgMc_nGwMPAqmstQ";
 
+/*Class*/
 class Application extends React.Component {
+  /*Constructor*/
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +44,7 @@ class Application extends React.Component {
       squareText: "",
       circleText: "",
       maxThemes: 2,
-      themeStart: 1.25 * window.innerHeight,
+      themeStart: 1.375 * window.innerHeight,
       themeGap: window.innerHeight,
       videoDimX1: 1,
       videoDimX2: 1,
