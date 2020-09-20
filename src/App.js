@@ -88,6 +88,16 @@ class Application extends React.Component {
     this.theme3Desc =
       "This thesis looks at an urban market, Begum Bazar situated in the old city of Hyderabad and its relation to gender. The work, initially set out to explore kitchen objects and their place in shaping one’s life, eventually becomes an exploration into how, space and gender narratives co-exist and help sustain each other. By using the example of this market situated in a major metropolitan Indian city, and through interviews of people occupying and visiting the space, the work speculates on how social hierarchies and practices gain ground.";
   }
+/* Legend colors */
+    godsColor = "#79859a";
+    godsStoreColor = "#6999a4";
+    restoColor = "#37482b";
+    bnwColor = "#355b75";
+    kitchenColor = "#75492f";
+    groceryColor = "#c2b89e";
+    toysColor = "#497182";
+    plasticColor = "#8f7f56";
+    barsColor = "#57858e";
 
 /*On Mount*/
   componentDidMount() {
@@ -795,7 +805,7 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: "red" }} />
+              <span className="legendDot" style={{ background: this.godsColor }} />
               <p style={{ textAlign: "left" }}>
                 Place of Worship <br /> # Stores: 50 <br /> Commonly Sold:
                 Religion
@@ -810,7 +820,7 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: "gray" }} />
+              <span className="legendDot" style={{ background: this.godsStoreColor }} />
               <p style={{ textAlign: "left" }}>
                 Religious Good <br /> # Stores: 50 <br /> Commonly Sold: Idols,
                 Incense, Vermillon
@@ -825,7 +835,7 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: "blue" }} />
+              <span className="legendDot" style={{ background: this.bnwColor }} />
               <p style={{ textAlign: "left" }}>
                 Beauty & Wedding <br /> # Stores: 50 <br /> Commonly Sold:
                 Bangles, Jewelry, Cosmetics, Bridal wear
@@ -840,7 +850,7 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: "green" }} />
+              <span className="legendDot" style={{ background: this.kitchenColor }} />
               <p style={{ textAlign: "left" }}>
                 Kitchen Utensils <br /> # Stores: 50 <br /> Commonly Sold: Pots,
                 Pans, Ladles, Crockery
@@ -855,7 +865,7 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: "brown" }} />
+              <span className="legendDot" style={{ background: this.groceryColor }} />
               <p style={{ textAlign: "left" }}>
                 Grocery <br /> # Stores: 50 <br /> Commonly Sold: Grains, Spices
               </p>
@@ -869,7 +879,7 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: "yellow" }} />
+              <span className="legendDot" style={{ background: this.toysColor }} />
               <p style={{ textAlign: "left" }}>
                 Toys <br /> # Stores: 50 <br /> Commonly Sold: Dolls, Bikes,
                 Stuffed animals
@@ -884,7 +894,7 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: "pink" }} />
+              <span className="legendDot" style={{ background: this.plasticColor }} />
               <p style={{ textAlign: "left" }}>
                 Plastic Goods <br /> # Stores: 50 <br /> Commonly Sold: Mops,
                 Buckets, Diapers
@@ -899,7 +909,7 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: "red" }} />
+              <span className="legendDot" style={{ background: this.restoColor }} />
               <p style={{ textAlign: "left" }}>
                 Restaurant <br /> # Stores: 50 <br /> Commonly Sold: Meals &
                 snacks
@@ -914,7 +924,7 @@ class Application extends React.Component {
                 verticalAlign: "top"
               }}
             >
-              <span className="legendDot" style={{ background: "orange" }} />
+              <span className="legendDot" style={{ background: this.barsColor }} />
               <p style={{ textAlign: "left" }}>
                 Bar & Liquor <br /> # Stores: 50 <br /> Commonly Sold: Alcholic
                 beverages
