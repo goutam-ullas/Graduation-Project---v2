@@ -349,7 +349,7 @@ display:inline;
   background-color: #d1dae0;
   color: black;
   align-self: "flex-start";
-  font-family: Helvetica, Sans-Serif;
+  font-family: NimbusRome;
   font-size: 14px;
   line-height: 130%;
 }
@@ -364,6 +364,12 @@ display:inline;
 
 .mapbox-canvas-container { 
   cursor: crosshair !important;
+}
+
+@font-face {
+    font-family: NimbusRome;
+    font-weight: regular;
+    src: url("./Assets/NimbusRomNo9L-Reg.otf") format("opentype");
 }
 
 *:focus {
