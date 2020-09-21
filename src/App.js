@@ -86,6 +86,18 @@ class Application extends React.Component {
     this.theme3Desc =
       "This thesis looks at an urban market, Begum Bazar situated in the old city of Hyderabad and its relation to gender. The work, initially set out to explore kitchen objects and their place in shaping one’s life, eventually becomes an exploration into how, space and gender narratives co-exist and help sustain each other. By using the example of this market situated in a major metropolitan Indian city, and through interviews of people occupying and visiting the space, the work speculates on how social hierarchies and practices gain ground.";
   }
+/* Video URLs*/
+  theme1Video = "https://vimeo.com/448630508/11ec6d4d54";
+  theme2Video = "https://vimeo.com/448630508/11ec6d4d54";
+  theme3Video = "https://vimeo.com/448630508/11ec6d4d54";
+  theme4Video = "https://vimeo.com/448630508/11ec6d4d54";
+  theme5Video = "https://vimeo.com/448630508/11ec6d4d54";
+  theme6Video = "https://vimeo.com/448630508/11ec6d4d54";
+  theme7Video = "https://vimeo.com/448630508/11ec6d4d54";
+  theme8Video = "https://vimeo.com/448630508/11ec6d4d54";
+  theme9Video = "https://vimeo.com/448630508/11ec6d4d54";
+
+
   /* Legend colors */
   godsColor = "#79859a";
   godsStoreColor = "#6999a4";
@@ -490,7 +502,7 @@ class Application extends React.Component {
       layerName: "",
       popUpPad: 0
     });
-    if (this.circleState > (this.maxThemes-1)) {
+    if (this.circleState > this.maxThemes - 1) {
       this.circleState = 0;
     } else {
       this.circleState += 1;
@@ -562,6 +574,21 @@ class Application extends React.Component {
           >
             <text className="themeDesc">{this.theme1Desc}</text>
           </div>
+          <ReactPlayer
+            className="video"
+            style={{
+              position: "sticky",
+              left: 600,
+              top: this.state.themeGap / 3,
+              zIndex: this.state.videoZindex1
+            }}
+            height={this.state.videoDimX1 * this.state.videoHeight}
+            width={this.state.videoDimX1 * this.state.videoWidth}
+            url={theme1Video}
+            controls={true}
+            onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
+            onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
+          />
         </div>
         {/*Theme 2*/}
         <div
@@ -597,7 +624,7 @@ class Application extends React.Component {
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
             width={this.state.videoDimX1 * this.state.videoWidth}
-            url="https://vimeo.com/448630508/11ec6d4d54"
+            url={theme2Video}
             controls={true}
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
@@ -637,7 +664,7 @@ class Application extends React.Component {
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
             width={this.state.videoDimX1 * this.state.videoWidth}
-            url="https://vimeo.com/448630508/11ec6d4d54"
+            url={theme3Video}
             controls={true}
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
@@ -677,7 +704,7 @@ class Application extends React.Component {
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
             width={this.state.videoDimX1 * this.state.videoWidth}
-            url="https://vimeo.com/448630508/11ec6d4d54"
+            url={theme4Video}
             controls={true}
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
@@ -717,7 +744,7 @@ class Application extends React.Component {
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
             width={this.state.videoDimX1 * this.state.videoWidth}
-            url="https://vimeo.com/448630508/11ec6d4d54"
+            url={theme5Video}
             controls={true}
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
@@ -757,7 +784,7 @@ class Application extends React.Component {
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
             width={this.state.videoDimX1 * this.state.videoWidth}
-            url="https://vimeo.com/448630508/11ec6d4d54"
+            url={theme6Video}
             controls={true}
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
@@ -797,7 +824,7 @@ class Application extends React.Component {
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
             width={this.state.videoDimX1 * this.state.videoWidth}
-            url="https://vimeo.com/448630508/11ec6d4d54"
+            url={theme7Video}
             controls={true}
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
@@ -837,7 +864,7 @@ class Application extends React.Component {
             }}
             height={this.state.videoDimX1 * this.state.videoHeight}
             width={this.state.videoDimX1 * this.state.videoWidth}
-            url="https://vimeo.com/448630508/11ec6d4d54"
+            url={theme8Video}
             controls={true}
             onPlay={() => this.setState({ videoDimX1: 1.25, videoZindex1: 10 })}
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
