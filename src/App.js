@@ -555,8 +555,8 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: window.innerWidth / 6,
-            width: (2 * window.innerWidth) / 3,
+            left: window.innerWidth / 5,
+            width: 3*(window.innerWidth) / 5,
             top: 1.47 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
@@ -566,7 +566,7 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              width: "30%",
+              width: "40%",
               position: "absolute",
               bottom: 70,
               zIndex: 5
@@ -594,8 +594,8 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: window.innerWidth / 6,
-            width: (2 * window.innerWidth) / 3,
+            left: window.innerWidth / 5,
+            width: 3*(window.innerWidth) / 5,
             top: 3 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
@@ -605,7 +605,7 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              width: "30%",
+              width: "40%",
               position: "absolute",
               bottom: 70,
               zIndex: 5
@@ -634,8 +634,8 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: window.innerWidth / 6,
-            width: (2 * window.innerWidth) / 3,
+            left: window.innerWidth / 5,
+            width: 3*(window.innerWidth) / 5,
             top: 4.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
@@ -645,7 +645,7 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              width: "30%",
+              width: "40%",
               position: "absolute",
               bottom: 70,
               zIndex: 5
@@ -674,8 +674,8 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: window.innerWidth / 6,
-            width: (2 * window.innerWidth) / 3,
+            left: window.innerWidth / 5,
+            width: 3*(window.innerWidth) / 5,
             top: 6 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
@@ -685,7 +685,7 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              width: "30%",
+              width: "40%",
               position: "absolute",
               bottom: 70,
               zIndex: 5
@@ -714,8 +714,8 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: window.innerWidth / 6,
-            width: (2 * window.innerWidth) / 3,
+            left: window.innerWidth / 5,
+            width: 3*(window.innerWidth) / 5,
             top: 7.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
@@ -725,7 +725,7 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              width: "30%",
+              width: "40%",
               position: "absolute",
               bottom: 70,
               zIndex: 5
@@ -754,8 +754,8 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: window.innerWidth / 6,
-            width: (2 * window.innerWidth) / 3,
+            left: window.innerWidth / 5,
+            width: 3*(window.innerWidth) / 5,
             top: 9 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
@@ -765,7 +765,7 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              width: "30%",
+              width: "40%",
               position: "absolute",
               bottom: 70,
               zIndex: 5
@@ -794,8 +794,8 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: window.innerWidth / 6,
-            width: (2 * window.innerWidth) / 3,
+            left: window.innerWidth / 5,
+            width: 3*(window.innerWidth) / 5,
             top: 10.5 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
@@ -805,7 +805,7 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              width: "30%",
+              width: "40%",
               position: "absolute",
               bottom: 70,
               zIndex: 5
@@ -834,8 +834,8 @@ class Application extends React.Component {
         <div
           style={{
             position: "absolute",
-            left: window.innerWidth / 6,
-            width: (2 * window.innerWidth) / 3,
+            left: window.innerWidth / 5,
+            width: 3*(window.innerWidth) / 5,
             top: 12 * this.state.themeGap,
             height: (3 * this.state.themeGap) / 4,
             pointerEvents: "none"
@@ -845,7 +845,7 @@ class Application extends React.Component {
           <div
             style={{
               padding: 20,
-              width: "30%",
+              width: "40%",
               position: "absolute",
               bottom: 70,
               zIndex: 5
@@ -870,7 +870,7 @@ class Application extends React.Component {
             onPause={() => this.setState({ videoDimX1: 1, videoZindex1: 1 })}
           />
         </div>
-        {/*Theme 8*/}
+        {/*End of Themes Buffer*/}
         <div
           style={{
             position: "absolute",
