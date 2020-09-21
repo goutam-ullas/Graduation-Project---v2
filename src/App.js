@@ -97,7 +97,7 @@ class Application extends React.Component {
   plasticColor = "#8f7f56";
   barsColor = "#57858e";
   /* Theme Position Variables*/
-  circleState = 1.53;
+  circleState = 0;
   maxThemes = 8;
   /*On Mount*/
   componentDidMount() {
@@ -490,18 +490,17 @@ class Application extends React.Component {
       layerName: "",
       popUpPad: 0
     });
-    if (this.circleState == 1.53 * this.maxThemes) {
+    if (this.circleState > (this.maxThemes-1)) {
       this.circleState = 0;
     } else {
-      this.circleState += 1.53;
+      this.circleState += 1;
     }
-    console.log(this.state.circleState);
-    var scrollTop = this.state.themeGap * this.circleState;
+    console.log(this.circleState);
     if (this.circleState == 0) {
-      window.scrollTo(0, scrollTop);
+      window.scrollTo(0, 0);
     } else {
-      window.scroll({
-        top: scrollTop,
+      window.scrollBy({
+        top: this.state.themeGap * 1.52,
         left: 0,
         behavior: "smooth"
       });
